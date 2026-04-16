@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaji Rehan — Frontend Developer & UI Engineer</title>
+  <meta name="description" content="Creative frontend developer specializing in modern UI animation, motion design, and interactive web experiences. Open for internship opportunities." />
+  <meta name="keywords" content="frontend developer, UI engineer, web developer, internship, portfolio, GSAP, animations" />
+  <meta name="author" content="Kaji Rehan" />
+  <meta property="og:title" content="Kaji Rehan — Frontend Developer Portfolio" />
+  <meta property="og:description" content="Creative frontend developer specializing in modern UI animation and motion design." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#6c63ff" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">R</div>
+    <div class="loader-bar-track">
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+    <div class="loader-text">Loading Portfolio</div>
+  </div>
+
+  <!-- ========== SCROLL PROGRESS ========== -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">Kaji.dev</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#upload">Upload</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient-orb orb-1"></div>
+      <div class="hero-gradient-orb orb-2"></div>
+      <div class="hero-gradient-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Open for Internship — Available Now
+        </div>
+        <p class="hero-greeting">Hi there, I'm</p>
+        <h1 class="hero-name">
+          Kaji <span class="gradient-text">Rehan</span>
+        </h1>
+        <div class="hero-title-line">
+          I build&nbsp;
+          <span class="typing-wrapper">
+            <span class="typing-text" id="typing-text"></span>
+            <span class="typing-cursor"></span>
+          </span>
+        </div>
+        <p class="hero-description">
+          A passionate frontend developer crafting pixel-perfect, high-performance web experiences with modern animation and interactive design.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            View My Work <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fa-solid fa-envelope"></i> Contact Me
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-dot"></div>
+            <div class="hero-card-dot"></div>
+            <div class="hero-card-dot"></div>
+          </div>
+          <div class="code-block">
+            <div class="code-line"><span class="code-keyword">const</span> <span class="code-function">developer</span> = <span class="code-bracket">{</span></div>
+            <div class="code-line">&nbsp;&nbsp;<span class="code-property">name</span>: <span class="code-string">"Kaji Rehan"</span>,</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="code-property">role</span>: <span class="code-string">"Frontend Developer"</span>,</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="code-property">skills</span>: [<span class="code-string">"HTML"</span>, <span class="code-string">"CSS"</span>, <span class="code-string">"JS"</span>],</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="code-property">passion</span>: <span class="code-string">"Building UIs"</span>,</div>
+            <div class="code-line">&nbsp;&nbsp;<span class="code-property">available</span>: <span class="code-number">true</span>,</div>
+            <div class="code-line"><span class="code-bracket">}</span>;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats container">
+      <div class="stat-item">
+        <div class="stat-number" data-count="15">0</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="8">0</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="500">0</div>
+        <div class="stat-label">Commits</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Curiosity</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label"><i class="fa-solid fa-user"></i> About Me</div>
+        <h2 class="section-title">Crafting Digital <span class="gradient-text">Experiences</span></h2>
+        <p class="section-subtitle">Turning complex problems into simple, beautiful, and intuitive designs that users love.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <div class="about-image-card">
+            <div class="about-image-inner">
+              <i class="fa-solid fa-laptop-code about-avatar-icon"></i>
+            </div>
+          </div>
+          <div class="about-floating-badge">
+            <div class="badge-icon"><i class="fa-solid fa-code"></i></div>
+            <div class="badge-text">
+              <div class="badge-number">2+ Years</div>
+              <div class="badge-label">Coding</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <h3>A Developer Who Cares About <span class="gradient-text">Every Pixel</span></h3>
+          <p>I'm a self-driven frontend developer with a deep passion for creating interactive, accessible, and visually stunning web experiences. I thrive on turning ideas into elegant code and pushing the boundaries of what's possible on the web.</p>
+          <p>Currently seeking internship opportunities where I can contribute my skills, learn from experienced teams, and grow as a developer.</p>
+
+          <div class="about-details">
+            <div class="about-detail-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div class="detail-info">
+                <span class="detail-label">Location</span>
+                <span class="detail-value">India</span>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div class="detail-info">
+                <span class="detail-label">Education</span>
+                <span class="detail-value">BCA</span>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <i class="fa-solid fa-language"></i>
+              <div class="detail-info">
+                <span class="detail-label">Languages</span>
+                <span class="detail-value">English, Hindi</span>
+              </div>
+            </div>
+            <div class="about-detail-item">
+              <i class="fa-solid fa-heart"></i>
+              <div class="detail-info">
+                <span class="detail-label">Interests</span>
+                <span class="detail-value">Frontend, UI/UX, Animation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-timeline">
+            <div class="timeline-item">
+              <span class="timeline-year">2026</span>
+              <div class="timeline-content">
+                <h4>Started Full-Stack Journey</h4>
+                <p>Diving into React, Node.js, and modern web architectures</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">2025</span>
+              <div class="timeline-content">
+                <h4>Frontend Specialization</h4>
+                <p>Built 15+ projects with advanced CSS & JavaScript animations</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-year">2024</span>
+              <div class="timeline-content">
+                <h4>Coding Journey Begins</h4>
+                <p>First "Hello World" — instantly hooked on web development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label"><i class="fa-solid fa-cubes"></i> Skills</div>
+        <h2 class="section-title">My Technical <span class="gradient-text">Arsenal</span></h2>
+        <p class="section-subtitle">Technologies and tools I use to bring ideas to life</p>
+      </div>
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+          <div class="skill-name">HTML5</div>
+          <div class="skill-desc">Semantic markup, accessibility, and modern HTML patterns</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="95"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>95%</span></div>
+        </div>
+        <!-- Skill 2 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-brands fa-css3-alt"></i></div>
+          <div class="skill-name">CSS3 / SCSS</div>
+          <div class="skill-desc">Advanced layouts, animations, glassmorphism, responsive design</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="92"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>92%</span></div>
+        </div>
+        <!-- Skill 3 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-desc">ES6+, DOM manipulation, async patterns, APIs</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="88"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>88%</span></div>
+        </div>
+        <!-- Skill 4 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+          <div class="skill-name">React</div>
+          <div class="skill-desc">Component architecture, hooks, state management</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="78"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>78%</span></div>
+        </div>
+        <!-- Skill 5 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="skill-name">GSAP Animation</div>
+          <div class="skill-desc">ScrollTrigger, timelines, SVG animation, motion design</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="85"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>85%</span></div>
+        </div>
+        <!-- Skill 6 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+          <div class="skill-name">Git & GitHub</div>
+          <div class="skill-desc">Version control, branching, collaboration workflows</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="82"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>82%</span></div>
+        </div>
+        <!-- Skill 7 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-brands fa-figma"></i></div>
+          <div class="skill-name">Figma</div>
+          <div class="skill-desc">UI/UX design, prototyping, design-to-code workflows</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="75"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>75%</span></div>
+        </div>
+        <!-- Skill 8 -->
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-desc">REST APIs, Express, server-side rendering basics</div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" data-width="70"></div>
+          </div>
+          <div class="skill-level"><span>Proficiency</span><span>70%</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label"><i class="fa-solid fa-rocket"></i> Projects</div>
+        <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        <p class="section-subtitle">A selection of projects that showcase my skills and passion for building great UIs</p>
+      </div>
+      <div class="projects-grid">
+        
+        <div class="project-card">
+          <div class="project-image">
+            <div class="project-image-placeholder">📚</div>
+            <div class="project-overlay">
+              <a href="#" class="btn btn-primary">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">JS</span>
+            </div>
+            <h3 class="project-title">Library Showcase</h3>
+            <p class="project-desc">A modern and interactive digital library system. Features dynamic book cataloging, advanced search UI, and sleek hover animations.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== UPLOAD SECTION ========== -->
+  <section class="upload" id="upload">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label"><i class="fa-solid fa-cloud-arrow-up"></i> Upload</div>
+        <h2 class="section-title">Share Your <span class="gradient-text">Files</span></h2>
+        <p class="section-subtitle">Drag and drop or click to upload files with animated feedback</p>
+      </div>
+      <div class="upload-area-wrapper">
+        <div class="upload-zone" id="upload-zone">
+          <div class="upload-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <h3 class="upload-title">Drag & drop files here</h3>
+          <p class="upload-subtitle">or click the button below to browse</p>
+          <button class="upload-btn" id="upload-btn-trigger">
+            <i class="fa-solid fa-folder-open"></i> Choose Files
+          </button>
+          <p class="upload-formats">Supports: PDF, PNG, JPG, SVG, ZIP — Max 10MB</p>
+          <input type="file" id="upload-input" multiple accept=".pdf,.png,.jpg,.jpeg,.svg,.zip" />
+        </div>
+        <div class="upload-feedback" id="upload-feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESUME SECTION ========== -->
+  <section class="resume" id="resume">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label"><i class="fa-solid fa-file-lines"></i> Resume</div>
+        <h2 class="section-title">My <span class="gradient-text">Resume</span></h2>
+        <p class="section-subtitle">Download my resume to see my complete qualifications and experience</p>
+      </div>
+      <div class="resume-card">
+        <div class="resume-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+        <h3>Ready to Join Your Team</h3>
+        <p>
+          I'm actively looking for internship opportunities where I can apply my frontend skills, learn from mentors, and contribute to impactful products.
+        </p>
+        <div class="resume-highlights">
+          <div class="resume-highlight">
+            <i class="fa-solid fa-circle-check"></i> Frontend Development
+          </div>
+          <div class="resume-highlight">
+            <i class="fa-solid fa-circle-check"></i> UI/UX Design
+          </div>
+          <div class="resume-highlight">
+            <i class="fa-solid fa-circle-check"></i> GSAP & Motion Design
+          </div>
+          <div class="resume-highlight">
+            <i class="fa-solid fa-circle-check"></i> Responsive Layouts
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary btn-download" download>
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label"><i class="fa-solid fa-paper-plane"></i> Contact</div>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <p class="section-subtitle">Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or internship opportunities. Feel free to reach out!</p>
+          <div class="contact-links">
+            <a href="mailto:rehuu7899@gmail.com" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-link-text">
+                <span>Email</span>
+                <p>rehuu7899@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/rehuhub-08" target="_blank" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-link-text">
+                <span>GitHub</span>
+                <p>rehuhub-08</p>
+              </div>
+            </a>
+            <a href="https://youtube.com/@codewithrehu?si=gNKGZTCmGs-dpMIW" target="_blank" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-brands fa-youtube"></i></div>
+              <div class="contact-link-text">
+                <span>YouTube</span>
+                <p>youtube.com/@codewithrehu</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/rehuu7899@gmail.com" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-subject">Subject</label>
+            <input type="text" id="form-subject" name="_subject" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" name="message" placeholder="Write your message here..." required></textarea>
+            <!-- Disable FormSubmit captcha -->
+            <input type="hidden" name="_captcha" value="false">
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+            <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+            <span class="btn-success"><i class="fa-solid fa-check"></i> Message Sent!</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-left">
+        <a href="#" class="footer-logo">Kaji.dev</a>
+        <p class="footer-copy">&copy; 2025 Kaji Rehan. Crafted with <i class="fa-solid fa-heart" style="color: var(--accent-tertiary);"></i></p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/rehuhub-08" target="_blank" class="footer-social" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://youtube.com/@codewithrehu?si=gNKGZTCmGs-dpMIW" target="_blank" class="footer-social" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="footer-social" aria-label="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="footer-social" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
